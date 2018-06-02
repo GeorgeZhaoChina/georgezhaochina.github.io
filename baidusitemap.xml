@@ -5,11 +5,62 @@
     
   <url>
     <loc>http://www.chinazga.com/2018/06/02/Hexo-FAQ/</loc>
-    <lastmod>2018-06-02T14:40:38.127Z</lastmod>
+    <lastmod>2018-06-02T14:52:40.104Z</lastmod>
     <data>
         <display>
         <title>Hexo FAQ</title>
         <pubTime>2018-06-02T14:38:14.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.chinazga.com/2018/05/12/first/</loc>
+    <lastmod>2018-06-02T14:51:43.411Z</lastmod>
+    <data>
+        <display>
+        <title>linux-scp&tar</title>
+        <pubTime>2018-05-12T11:43:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.chinazga.com/2018/05/24/diary-2018-0524-2229/</loc>
+    <lastmod>2018-06-02T14:51:41.148Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS 7 Apache安装 -- ab压测</title>
+        <pubTime>2018-05-23T16:00:00.000Z</pubTime>
+        
+        <tag>Lnmp</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.chinazga.com/2018/06/02/hexo%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD-%E8%AE%BF%E9%97%AE%E7%BB%9F%E8%AE%A1/</loc>
+    <lastmod>2018-06-02T14:51:33.462Z</lastmod>
+    <data>
+        <display>
+        <title>hexo打赏功能&&访问统计</title>
+        <pubTime>2018-06-02T14:25:22.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -106,23 +157,6 @@
 
     
   <url>
-    <loc>http://www.chinazga.com/2018/06/02/hexo%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD-%E8%AE%BF%E9%97%AE%E7%BB%9F%E8%AE%A1/</loc>
-    <lastmod>2018-06-02T14:25:38.044Z</lastmod>
-    <data>
-        <display>
-        <title>hexo打赏功能&&访问统计</title>
-        <pubTime>2018-06-02T14:25:22.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.chinazga.com/2018/06/02/git-install/</loc>
     <lastmod>2018-06-02T14:24:09.524Z</lastmod>
     <data>
@@ -131,23 +165,6 @@
         <pubTime>2018-06-02T14:20:59.000Z</pubTime>
         
         <tag>Git</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.chinazga.com/2018/05/12/first/</loc>
-    <lastmod>2018-06-01T16:12:53.856Z</lastmod>
-    <data>
-        <display>
-        <title>linux-scp&tar</title>
-        <pubTime>2018-05-12T11:43:00.000Z</pubTime>
-        
-        <tag>linux</tag>
          
          
            
@@ -166,23 +183,6 @@
         <pubTime>2018-05-23T16:00:00.000Z</pubTime>
         
         <tag>mysql</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.chinazga.com/2018/05/24/diary-2018-0524-2229/</loc>
-    <lastmod>2018-05-24T15:18:52.635Z</lastmod>
-    <data>
-        <display>
-        <title>CentOS 7 Apache安装 -- ab压测</title>
-        <pubTime>2018-05-23T16:00:00.000Z</pubTime>
-        
-        <tag>lnmp</tag>
          
          
            
