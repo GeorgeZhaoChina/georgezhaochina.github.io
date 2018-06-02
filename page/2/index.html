@@ -144,7 +144,99 @@
             <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-diary-2018-0524-2300" class="article article-type-post article-index" itemscope itemprop="blogPost">
+            <article id="post-diary-2018-0524-2229" class="article article-type-post article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/24/diary-2018-0524-2229/">CentOS 7 Apache安装 -- ab压测</a>
+    </h1>
+        
+        <a href="/2018/05/24/diary-2018-0524-2229/" class="archive-article-date">
+  	<time datetime="2018-05-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装步骤："><a href="#安装步骤：" class="headerlink" title="安装步骤："></a>安装步骤：</h2><blockquote>
+<p>说明： Apache默认在Centos仓库<br>sudo yum install httpd<br>启动服务<br>sudo systemctl enable httpd<br>sudo systemctl start httpd<br>查看状态<br>sudo systemctl status httpd<br>sudo httpd -v</p>
+</blockquote>
+<hr>
+<h2 id="ab压测"><a href="#ab压测" class="headerlink" title="ab压测"></a>ab压测</h2><ul>
+<li>ab是Apache 自带的压测工具，可以对apache、nginx、tomcat、IIS等压测。</li>
+<li>语法格式：<ul>
+<li><strong>ab</strong> [options] [http://]hostname[:port]/path</li>
+<li>常用案例：   <strong>ab -n 2000 -c 100 url路径</strong></li>
+</ul>
+</li>
+<li>参数说明<blockquote>
+<p> -n  即requests，用于指定压力测试总共的执行次数。<br>-c 即concurrency，用于指定压力测试的并发数。<br>-t 即timelimit，等待响应的最大时间(单位：秒)。<br>-w 以HTML表格形式打印结果。<br>-h 显示用法信息，其实就是ab -help。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>压测结果案例说明<blockquote>
+<p>Server Software:         Apache/2.2.25 (服务器软件名称及版本信息)<br>Server Hostname:        localhost (服务器主机名)<br>Server Port:                 80 (服务器端口)<br>Document Path:            /index.php (供测试的URL路径)<br>Document Length:        10 bytes (供测试的URL返回的文档大小)<br>Concurrency Level:      100 (并发数)<br>Time taken for tests:     0.247 seconds (压力测试消耗的总时间)<br>Complete requests:      1000 (压力测试的总次数)<br>Failed requests:            0 (失败的请求数)<br>Write errors:                 0 (网络连接写入错误数)<br>Total transferred:          198000 bytes (传输的总数据量)<br>HTML transferred:       10000 bytes (HTML文档的总数据量)<br>Requests per second:    4048.34 [#/sec] (mean) (平均每秒的请求数)<br><strong>Time per request:</strong>         24.701 [ms] (mean) (所有并发用户(这里是100)都请求一次的平均时间)<br><strong>Time per request:</strong>         0.247 [ms] (mean, across all concurrent requests) (单个用户请求一次的平均时间)<br>Transfer rate:                782.78 [Kbytes/sec] received (传输速率，单位：KB/s)<br>Connection Times (ms)<br>min mean[+/-sd] median max<br>Connect: 0 483 1773.5 11 9052<br>Processing: 2 556 1459.1 255 11763<br>Waiting: 1 515 1459.8 220 11756<br>Total: 139 1039 2296.6 275 11843</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>Percentage of the requests served within a certain time (ms)<br>50% 275<br>66% 298<br>75% 328<br>80% 373<br>90% 3260<br>95% 9075<br>98% 9267<br>99% 11713<br>100% 11843 (longest request)<br>其中50％的用户响应时间小于275毫秒</p>
+</blockquote>
+      
+
+      
+    </div>
+	
+
+    <div class="article-info article-info-index">
+      
+      <div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">lnmp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+	  
+		<div>
+			<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+			<span id="busuanzi_container_page_pv">
+			  阅读量<span id="busuanzi_value_page_pv"></span>次
+			</span>
+		</div>
+		
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+  
+    <article id="post-diary-2018-0524-2300" class="article article-type-post article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -345,7 +437,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
         		</li>
       		
 		</ul>
@@ -415,91 +507,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
-        		</li>
-      		
-		</ul>
-	</div>
-	  
-		<div>
-			<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-			<span id="busuanzi_container_page_pv">
-			  阅读量<span id="busuanzi_value_page_pv"></span>次
-			</span>
-		</div>
-		
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-  
-    <article id="post-title" class="article article-type-post article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/12/title/">linux find</a>
-    </h1>
-        
-        <a href="/2018/05/12/title/" class="archive-article-date">
-  	<time datetime="2018-05-12T11:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="用户信息"><a href="#用户信息" class="headerlink" title="用户信息"></a>用户信息</h3><blockquote>
-<ol>
-<li>w/who目前登录用户</li>
-<li>last 到目前为止所有用户登录信息/lastlog 每个账号最近登录</li>
-</ol>
-</blockquote>
-<h3 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h3><blockquote>
-<p><strong> find </strong></p>
-<ul>
-<li>说明  不常用，因速度慢[whereis/locate找不到可考虑find]</li>
-<li>使用案例<br>   find [PATH] [option] [action]<br><strong> whereis </strong></li>
-<li>参数说明 [ -b  查找可执行文件]</li>
-<li>使用案例<br>  whereis [-bmsu]<br><strong> locate </strong></li>
-<li>安装<br>   yum install mlocate<br>   updatedb<br>   locate inittab</li>
-<li>参数说明[-i 忽略大小写， -r 后面可接 正则表达式 ]<br>   使用案例： locate [-ir] 查找文件</li>
-<li>linux中查找原理<br>   根据自己创建 数据库 /var/lib/mlocate， 默认每天更新一次，<br>   updatedb 手动更新，耗时需要几分钟</li>
-</ul>
-</blockquote>
-      
-
-      
-    </div>
-	
-
-    <div class="article-info article-info-index">
-      
-      <div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -640,6 +647,91 @@
     </div>
 </aside>
   
+    <article id="post-title" class="article article-type-post article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/12/title/">linux find</a>
+    </h1>
+        
+        <a href="/2018/05/12/title/" class="archive-article-date">
+  	<time datetime="2018-05-12T11:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="用户信息"><a href="#用户信息" class="headerlink" title="用户信息"></a>用户信息</h3><blockquote>
+<ol>
+<li>w/who目前登录用户</li>
+<li>last 到目前为止所有用户登录信息/lastlog 每个账号最近登录</li>
+</ol>
+</blockquote>
+<h3 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h3><blockquote>
+<p><strong> find </strong></p>
+<ul>
+<li>说明  不常用，因速度慢[whereis/locate找不到可考虑find]</li>
+<li>使用案例<br>   find [PATH] [option] [action]<br><strong> whereis </strong></li>
+<li>参数说明 [ -b  查找可执行文件]</li>
+<li>使用案例<br>  whereis [-bmsu]<br><strong> locate </strong></li>
+<li>安装<br>   yum install mlocate<br>   updatedb<br>   locate inittab</li>
+<li>参数说明[-i 忽略大小写， -r 后面可接 正则表达式 ]<br>   使用案例： locate [-ir] 查找文件</li>
+<li>linux中查找原理<br>   根据自己创建 数据库 /var/lib/mlocate， 默认每天更新一次，<br>   updatedb 手动更新，耗时需要几分钟</li>
+</ul>
+</blockquote>
+      
+
+      
+    </div>
+	
+
+    <div class="article-info article-info-index">
+      
+      <div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+	  
+		<div>
+			<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+			<span id="busuanzi_container_page_pv">
+			  阅读量<span id="busuanzi_value_page_pv"></span>次
+			</span>
+		</div>
+		
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
@@ -735,7 +827,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -744,6 +836,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">办公</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
