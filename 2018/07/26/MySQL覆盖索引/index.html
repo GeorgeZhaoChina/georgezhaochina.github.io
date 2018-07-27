@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.chinazga.com">
-  <title>Hexo干货[二] 主题切换 | 蚂蚁窝大梦想</title>
+  <title>MySQL覆盖索引 | 蚂蚁窝大梦想</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="主题切换1. 挑选主题：Themes2. 下载主题，以yilia为例 git clone https://github.com/litten/hexo-theme-yilia.git  themes/yilia  3. 更换主题 找到根目录下_config.yml 12修改前：theme: landscape修改后：theme: yilia  主题个性化设置    修改头像 avatar: /as">
-<meta name="keywords" content="Hexo">
+  <meta name="description" content="一、定义如果一个索引包含（或覆盖）所有查询的字段值，我们称之为覆盖索引。索引是一种查找数据的高效方式，但MySQL也可以使用索引直接获取列的数据，这样就不用读取数据的行。 二、覆盖索引优势 减少数据访问量和减少响应时间索引条目通常小于数据行大小，只读取索引，极大减少数据访问量。对缓存的负载非常重要，响应时间大部分花在数据拷贝。覆盖索引对应I/O密集型应用也有帮助，因索引比数据更小，更容易全部放到内">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo干货[二] 主题切换">
-<meta property="og:url" content="http://www.chinazga.com/2018/06/05/Hexo-干货主题切换二/index.html">
+<meta property="og:title" content="MySQL覆盖索引">
+<meta property="og:url" content="http://www.chinazga.com/2018/07/26/MySQL覆盖索引/index.html">
 <meta property="og:site_name" content="蚂蚁窝大梦想">
-<meta property="og:description" content="主题切换1. 挑选主题：Themes2. 下载主题，以yilia为例 git clone https://github.com/litten/hexo-theme-yilia.git  themes/yilia  3. 更换主题 找到根目录下_config.yml 12修改前：theme: landscape修改后：theme: yilia  主题个性化设置    修改头像 avatar: /as">
+<meta property="og:description" content="一、定义如果一个索引包含（或覆盖）所有查询的字段值，我们称之为覆盖索引。索引是一种查找数据的高效方式，但MySQL也可以使用索引直接获取列的数据，这样就不用读取数据的行。 二、覆盖索引优势 减少数据访问量和减少响应时间索引条目通常小于数据行大小，只读取索引，极大减少数据访问量。对缓存的负载非常重要，响应时间大部分花在数据拷贝。覆盖索引对应I/O密集型应用也有帮助，因索引比数据更小，更容易全部放到内">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.chinazga.com/assets/pic/wangyi_wailian.png">
-<meta property="og:updated_time" content="2018-06-24T14:45:12.000Z">
+<meta property="og:updated_time" content="2018-07-27T15:00:18.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo干货[二] 主题切换">
-<meta name="twitter:description" content="主题切换1. 挑选主题：Themes2. 下载主题，以yilia为例 git clone https://github.com/litten/hexo-theme-yilia.git  themes/yilia  3. 更换主题 找到根目录下_config.yml 12修改前：theme: landscape修改后：theme: yilia  主题个性化设置    修改头像 avatar: /as">
-<meta name="twitter:image" content="http://www.chinazga.com/assets/pic/wangyi_wailian.png">
+<meta name="twitter:title" content="MySQL覆盖索引">
+<meta name="twitter:description" content="一、定义如果一个索引包含（或覆盖）所有查询的字段值，我们称之为覆盖索引。索引是一种查找数据的高效方式，但MySQL也可以使用索引直接获取列的数据，这样就不用读取数据的行。 二、覆盖索引优势 减少数据访问量和减少响应时间索引条目通常小于数据行大小，只读取索引，极大减少数据访问量。对缓存的负载非常重要，响应时间大部分花在数据拷贝。覆盖索引对应I/O密集型应用也有帮助，因索引比数据更小，更容易全部放到内">
   
     <link rel="alternative" href="/atom.xml" title="蚂蚁窝大梦想" type="application/atom+xml">
   
@@ -152,50 +150,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="_post-Hexo-干货主题切换二" class="article article-type-_post " itemscope itemprop="blogPost">
+            <article id="_post-MySQL覆盖索引" class="article article-type-_post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo干货[二] 主题切换
+      MySQL覆盖索引
     </h1>
   
 
         
-        <a href="/2018/06/05/Hexo-干货主题切换二/" class="archive-article-date">
-  	<time datetime="2018-06-05T15:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
+        <a href="/2018/07/26/MySQL覆盖索引/" class="archive-article-date">
+  	<time datetime="2018-07-26T13:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="主题切换"><a href="#主题切换" class="headerlink" title="主题切换"></a>主题切换</h1><h3 id="1-挑选主题：Themes"><a href="#1-挑选主题：Themes" class="headerlink" title="1. 挑选主题：Themes"></a>1. 挑选主题：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Themes</a></h3><h3 id="2-下载主题，以yilia为例"><a href="#2-下载主题，以yilia为例" class="headerlink" title="2. 下载主题，以yilia为例"></a>2. 下载主题，以<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">yilia</a>为例</h3><blockquote>
-<p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a>  themes/yilia</p>
-</blockquote>
-<h3 id="3-更换主题"><a href="#3-更换主题" class="headerlink" title="3. 更换主题"></a>3. 更换主题</h3><ol>
-<li><p>找到根目录下_config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">修改前：theme: landscape</span><br><span class="line">修改后：theme: yilia</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>主题个性化设置</p>
-</li>
-</ol>
-<ul>
-<li>修改头像<blockquote>
-<p>avatar: /assets/img/my.jpg</p>
-</blockquote>
-</li>
-<li>其他配置修改同上</li>
+        <h1 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h1><p>如果一个索引包含（或覆盖）所有查询的字段值，我们称之为覆盖索引。<br>索引是一种查找数据的高效方式，但MySQL也可以使用索引直接获取列的数据，这样就不用读取数据的行。</p>
+<h1 id="二、覆盖索引优势"><a href="#二、覆盖索引优势" class="headerlink" title="二、覆盖索引优势"></a>二、覆盖索引优势</h1><ul>
+<li>减少数据访问量和减少响应时间<br>索引条目通常小于数据行大小，只读取索引，极大减少数据访问量。对缓存的负载非常重要，响应时间大部分花在数据拷贝。<br>覆盖索引对应I/O密集型应用也有帮助，因索引比数据更小，更容易全部放到内存中（MyISAM压缩索引更小）。<ul>
+<li>减少I/O<br>索引按照列值顺序存储，索引对于I/O密集型的范围查询会比从磁盘随机读取每一行数据的I/O少很多。</li>
+<li>减少系统调用和降低开销<br>一些存储引擎如MyISAM在内存中只缓存索引，数据则依赖当前操作系统缓存，因此要访问数据需要一次系统调用。这可能导致严重的性能问题，尤其是那些系统调用占了数据访问中的最大开销的场景。</li>
+<li>InnoDB避免二次查询<br>由于InnoDB的聚簇索引，覆盖索引对InnoDB特别有用。InnoDB的二级索引在叶子节点保存了行的主键值，所以如果二级主键查询能够覆盖索引，则可以避免对主键索引的二次查找。</li>
 </ul>
-<h1 id="添加网易云音乐"><a href="#添加网易云音乐" class="headerlink" title="添加网易云音乐"></a>添加<a href="https://music.163.com/" target="_blank" rel="noopener">网易云音乐</a></h1><h3 id="1-搜索你要添加的背景音乐"><a href="#1-搜索你要添加的背景音乐" class="headerlink" title="1. 搜索你要添加的背景音乐"></a>1. 搜索你要添加的背景音乐</h3><blockquote>
-<p>付费音乐因版权一般不允许生成外链<br>没有账号的童鞋去注册下</p>
-</blockquote>
-<h3 id="2-搜索到歌曲点击生成外链播放器"><a href="#2-搜索到歌曲点击生成外链播放器" class="headerlink" title="2. 搜索到歌曲点击生成外链播放器"></a>2. 搜索到歌曲点击生成外链播放器</h3><p><img src="/assets/pic/wangyi_wailian.png" alt=""></p>
-<h3 id="3-添加外链播放器的代码"><a href="#3-添加外链播放器的代码" class="headerlink" title="3. 添加外链播放器的代码"></a>3. 添加外链播放器的代码</h3><blockquote>
-<p>yilia\layout_partial\left-col.ejs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> &lt;!--音乐播放插件--&gt;</span><br><span class="line">&lt;div style=&quot;margin-top:30px;&quot;&gt;</span><br><span class="line">	&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=220 height=52 src=&quot;//music.163.com/outchain/player?type=0&amp;id=2242704947&amp;auto=1&amp;height=32&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+</li>
+</ul>
+<h1 id="三、使用索引条件及Extra"><a href="#三、使用索引条件及Extra" class="headerlink" title="三、使用索引条件及Extra"></a>三、使用索引条件及Extra</h1><p>MySQL只能使用B-Tree索引做覆盖索引，覆盖索引必须要存储索引列的值，而哈希索引、空间索引和全文索引等都不存储索引列的值。不同存储引擎实现覆盖索引方式也不同。</p>
+<p>当发起一个被覆盖索引的查询时，在EXPLAIN的Extra列可以看到Using index的信息。</p>
+<h1 id="四、覆盖索引失效及解决方案"><a href="#四、覆盖索引失效及解决方案" class="headerlink" title="四、覆盖索引失效及解决方案"></a>四、覆盖索引失效及解决方案</h1><ul>
+<li>失效1：索引覆盖WHERE条件中字段，但不是整个查询的字段<br>延迟关联<br>利用InnoDB的二级索引</li>
+<li>失效2：LIKE模糊查询<br>原因：MySQL5.5及之前版本只允许在索引中做简单比较操作限制（=、!=及小于），这是底层存储引擎API限制。MySQL5.6之后已支持，由于ICP这个特性改善了查询执行方式。<br>解决方案：升级MySQL到5.7；延迟关联；最左前缀匹配。</li>
+</ul>
+<p>—- END —-</p>
 
       
 
@@ -237,7 +227,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
         		</li>
       		
 		</ul>
@@ -301,7 +291,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.chinazga.com/2018/06/05/Hexo-干货主题切换二/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.chinazga.com/2018/07/26/MySQL覆盖索引/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +305,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/26/MySQL覆盖索引/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/27/高性能索引策略/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          MySQL覆盖索引
+          高性能索引策略
         
       </div>
     </a>
   
   
-    <a href="/2018/06/03/Hexo-PS-wordpress/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">博客选择</div>
+    <a href="/2018/06/05/Hexo-干货主题切换二/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo干货[二] 主题切换</div>
       <i class="icon-circle-right"></i>
     </a>
   

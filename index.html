@@ -239,6 +239,101 @@
 
 
   
+    <article id="_post-MySQL覆盖索引" class="article article-type-_post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/26/MySQL覆盖索引/">MySQL覆盖索引</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/26/MySQL覆盖索引/" class="archive-article-date">
+  	<time datetime="2018-07-26T13:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h1><p>如果一个索引包含（或覆盖）所有查询的字段值，我们称之为覆盖索引。<br>索引是一种查找数据的高效方式，但MySQL也可以使用索引直接获取列的数据，这样就不用读取数据的行。</p>
+<h1 id="二、覆盖索引优势"><a href="#二、覆盖索引优势" class="headerlink" title="二、覆盖索引优势"></a>二、覆盖索引优势</h1><ul>
+<li>减少数据访问量和减少响应时间<br>索引条目通常小于数据行大小，只读取索引，极大减少数据访问量。对缓存的负载非常重要，响应时间大部分花在数据拷贝。<br>覆盖索引对应I/O密集型应用也有帮助，因索引比数据更小，更容易全部放到内存中（MyISAM压缩索引更小）。<ul>
+<li>减少I/O<br>索引按照列值顺序存储，索引对于I/O密集型的范围查询会比从磁盘随机读取每一行数据的I/O少很多。</li>
+<li>减少系统调用和降低开销<br>一些存储引擎如MyISAM在内存中只缓存索引，数据则依赖当前操作系统缓存，因此要访问数据需要一次系统调用。这可能导致严重的性能问题，尤其是那些系统调用占了数据访问中的最大开销的场景。</li>
+<li>InnoDB避免二次查询<br>由于InnoDB的聚簇索引，覆盖索引对InnoDB特别有用。InnoDB的二级索引在叶子节点保存了行的主键值，所以如果二级主键查询能够覆盖索引，则可以避免对主键索引的二次查找。</li>
+</ul>
+</li>
+</ul>
+<h1 id="三、使用索引条件及Extra"><a href="#三、使用索引条件及Extra" class="headerlink" title="三、使用索引条件及Extra"></a>三、使用索引条件及Extra</h1><p>MySQL只能使用B-Tree索引做覆盖索引，覆盖索引必须要存储索引列的值，而哈希索引、空间索引和全文索引等都不存储索引列的值。不同存储引擎实现覆盖索引方式也不同。</p>
+<p>当发起一个被覆盖索引的查询时，在EXPLAIN的Extra列可以看到Using index的信息。</p>
+<h1 id="四、覆盖索引失效及解决方案"><a href="#四、覆盖索引失效及解决方案" class="headerlink" title="四、覆盖索引失效及解决方案"></a>四、覆盖索引失效及解决方案</h1><ul>
+<li>失效1：索引覆盖WHERE条件中字段，但不是整个查询的字段<br>延迟关联<br>利用InnoDB的二级索引</li>
+<li>失效2：LIKE模糊查询<br>原因：MySQL5.5及之前版本只允许在索引中做简单比较操作限制（=、!=及小于），这是底层存储引擎API限制。MySQL5.6之后已支持，由于ICP这个特性改善了查询执行方式。<br>解决方案：升级MySQL到5.7；延迟关联；最左前缀匹配。</li>
+</ul>
+<p>—- END —-</p>
+
+      
+
+      
+    </div>
+	
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+	  
+		<div>
+			<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+			<span id="busuanzi_container_page_pv">
+			  阅读量<span id="busuanzi_value_page_pv"></span>次
+			</span>
+		</div>
+		
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="_post-Hexo-干货主题切换二" class="article article-type-_post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -609,95 +704,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-	  
-		<div>
-			<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-			<span id="busuanzi_container_page_pv">
-			  阅读量<span id="busuanzi_value_page_pv"></span>次
-			</span>
-		</div>
-		
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="_post-hexo打赏功能-访问统计" class="article article-type-_post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/02/hexo打赏功能-访问统计/">hexo打赏功能&amp;&amp;访问统计</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/02/hexo打赏功能-访问统计/" class="archive-article-date">
-  	<time datetime="2018-06-02T14:25:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>主题的 _config.yml 文件中关闭和打开<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reward_type: 2</span><br><span class="line"># 打赏wording</span><br><span class="line">reward_wording: &apos;你的打赏，是我最大写作动力&apos;</span><br><span class="line">alipay: /assets/img/alipay.jpg</span><br><span class="line">weixin: /assets/img/weixin.jpg</span><br></pre></td></tr></table></figure></p>
-<h2 id="增加访问统计"><a href="#增加访问统计" class="headerlink" title="增加访问统计"></a>增加访问统计</h2><p>1 <a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">不蒜子</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;</span><br><span class="line">	本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>2 <a href="https://www.umeng.com/" target="_blank" rel="noopener">友盟</a></p>
-<blockquote>
-<p>友盟需要注册，目前友盟、CNZZ和缔元信与20160126合并</p>
-<ul>
-<li>站点资料添加域名</li>
-<li>获取代码这栏，根据自己的爱好选择代码</li>
-</ul>
-</blockquote>
-
-      
-
-      
-    </div>
-	
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
         		</li>
       		
 		</ul>
